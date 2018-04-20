@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const { expect } = require('chai');
 
-describe('Test Layout', function() {
+describe('Exercise 1: Homepage Title', function() {
 	let page;
 	let browser;
 
@@ -12,13 +12,11 @@ describe('Test Layout', function() {
   		await page.goto('http://localhost:8000');
 	});
 
-	it('should do what it tell it to', async function () {
-	    expect(1).to.eql(2);
-	 });
+	it('should have the correct page title', async function () {
+		expect(await page.title()).to.eql('Hello Madison');
+	});
 
 	after (async function () {
 	    await browser.close();
 	});
 });
-
-
